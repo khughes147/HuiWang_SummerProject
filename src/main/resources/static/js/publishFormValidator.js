@@ -1,117 +1,59 @@
 $(document).ready(function(){
-        $('#startDateID').datepicker({
-            format: "dd/mm/yyyy"
-        });
-        $('#endDateID').datepicker({
-            format: "dd/mm/yyyy"
-        });
-        document.getElementById("endDateID").readOnly = true;
-        document.getElementById("startDateID").readOnly = true;
+
 
 //Write on Form
-	$('#studentNameID').blur(function(event) {
+	$('#fingerPrintID').blur(function(event) {
 		var input=$(this);
 		var is_name=input.val();
 		if(is_name){input.removeClass("is-invalid").addClass("is-valid"),
 		$('p.studentNameErrorMessage').remove();}
 		else{input.removeClass("is-valid").addClass("is-invalid"),
 		$('p.studentNameErrorMessage').remove(),
-		$('#studentNameID').after('<p class="studentNameErrorMessage">Student name can\'t be empty.</p>');}
+		$('#fingerPrintID').after('<p class="studentNameErrorMessage">Student name can\'t be empty.</p>');}
 	});
 	//check to make sure its an email
 	//if @ not included it wont allow the form to be submitted.
-	$('#studentEmail').blur(function(event) {
-		var input=$(this);
-		var re = /^[\w]+[\w.%+-]*@[\w.-]+\.ac\.uk$/;
-		var is_email=re.test(input.val());
-		if(is_email){input.removeClass("is-invalid").addClass("is-valid"),
-		$('p.studentEmailErrorMessage').remove();}
-		else{input.removeClass("is-valid").addClass("is-invalid"),
-		$('p.studentEmailErrorMessage').remove(),
-		$('#studentEmail').after('<p class="studentEmailErrorMessage">Email must be an .ac.uk address.</p>');}
-	});
-	$('#studentID').blur(function(event) {
+
+	$('#producerID').blur(function(event) {
 		var input=$(this);
 		var message=$(this).val();
 		if(message){input.removeClass("is-invalid").addClass("is-valid"),
 		$('p.studentIdErrorMessage').remove();}
 		else{input.removeClass("is-valid").addClass("is-invalid"),
 		$('p.studentIdErrorMessage').remove(),
-		$('#studentID').after('<p class="studentIdErrorMessage">Student ID can\'t be empty.</p>');}
+		$('#producerID').after('<p class="studentIdErrorMessage">Student ID can\'t be empty.</p>');}
 	});
 
-
-
-    	$('#courseNameID').blur(function(event) {
+	$('#walletID').blur(function(event) {
     		var input=$(this);
     		var message=$(this).val();
     		if(message){input.removeClass("is-invalid").addClass("is-valid"),
-    		$('p.courseNameErrorMessage').remove();}
+    		$('p.studentIdErrorMessage').remove();}
     		else{input.removeClass("is-valid").addClass("is-invalid"),
-    		$('p.courseNameErrorMessage').remove(),
-    		$('#courseNameID').after('<p class="courseNameErrorMessage">Course name can\'t be empty.</p>');}
+    		$('p.studentIdErrorMessage').remove(),
+    		$('#walletID').after('<p class="studentIdErrorMessage">Student ID can\'t be empty.</p>');}
     	});
-    	$('#startDateID').blur(function(event) {
-    		var input=$(this);
-    		input.addClass("is-valid");
 
-    	});
-    	$('#endDateID').blur(function(event) {
-    		var input=$(this);
-    		input.addClass("is-valid");
+    	$('#walletPasswordID').blur(function(event) {
+        		var input=$(this);
+        		var message=$(this).val();
+        		if(message){input.removeClass("is-invalid").addClass("is-valid"),
+        		$('p.studentIdErrorMessage').remove();}
+        		else{input.removeClass("is-valid").addClass("is-invalid"),
+        		$('p.studentIdErrorMessage').remove(),
+        		$('#walletPasswordID').after('<p class="studentIdErrorMessage">Student ID can\'t be empty.</p>');}
+        	});
 
-    	});
-    	$('#classificationID').blur(function(event) {
-    		var input=$(this);
-    		var message=$(this).val();
-    		if(message){input.removeClass("is-invalid").addClass("is-valid"),
-    		$('p.classificationErrorMessage').remove();}
-    		else{input.removeClass("is-valid").addClass("is-invalid"),
-    		$('p.classificationErrorMessage').remove(),
-    		$('#classificationID').after('<p class="classificationErrorMessage">Classification field can\'t be empty.</p>');}
-    	});
-    	$('#uniKeyID').blur(function(event) {
-    		var input=$(this);
-    		var message=$(this).val();
-    		if(message){input.removeClass("is-invalid").addClass("is-valid"),
-    		$('p.keyErrorMessage').remove();}
-    		else{input.removeClass("is-valid").addClass("is-invalid"),
-    		$('p.keyErrorMessage').remove(),
-    		$('#uniKeyID').after('<p class="keyErrorMessage">A University key is required.</p>');}
-    	});
+
+
 
 $("#publishButton").click(function(event){
 
-    if ($('#studentNameID').hasClass('form-control is-valid')){
-        if ($('#studentEmail').hasClass('form-control is-valid')){
-            if ($('#studentID').hasClass('form-control is-valid')){
-                    if ($('#courseNameID').hasClass('form-control is-valid')){
-                        if ($('#startDateID').hasClass('form-control is-valid')){
-                            if ($('#endDateID').hasClass('form-control is-valid')){
-                                if ($('#classificationID').hasClass('form-control is-valid')){
-                                    if ($('#uniKeyID').hasClass('form-control is-valid')){
+    if ($('#fingerPrintID').hasClass('form-control is-valid')){
+        if ($('#producerID').hasClass('form-control is-valid')){
+            if ($('#walletID').hasClass('form-control is-valid')){
+                if ($('#walletPasswordID').hasClass('form-control is-valid')){
 
-
-                                    }else{
-                                    alert("Please ensure all fields are completed correctly."),
-                                    event.stopPropagation();
-                                    event.preventDefault();}
-                                }else{
-                                alert("Please ensure all fields are completed correctly."),
-                                event.stopPropagation();
-                                event.preventDefault();}
-                            }else{
-                            alert("Please ensure all fields are completed correctly."),
-                            event.stopPropagation();
-                            event.preventDefault();}
-                        }else{
-                        alert("Please ensure all fields are completed correctly."),
-                        event.stopPropagation();
-                        event.preventDefault();}
-                    }else{
-                    alert("Please ensure all fields are completed correctly."),
-                    event.stopPropagation();
-                    event.preventDefault();}
                 }else{
                 alert("Please ensure all fields are completed correctly."),
                 event.stopPropagation();
@@ -124,5 +66,29 @@ $("#publishButton").click(function(event){
         alert("Please ensure all fields are completed correctly."),
         event.stopPropagation();
         event.preventDefault();}
+    }else{
+    alert("Please ensure all fields are completed correctly."),
+    event.stopPropagation();
+    event.preventDefault();}
 });
+
+$('.btn-file :file').on('fileselect', function(event, numFiles, label) {
+
+        var input = $(this).parents('.input-group').find(':text'),
+            log = numFiles > 1 ? numFiles + ' files selected' : label;
+
+        if( input.length ) {
+            input.val(log);
+        } else {
+            if( log ) alert(log);
+        }
+
+    });
+});
+
+$(document).on('change', '.btn-file :file', function() {
+  var input = $(this),
+      numFiles = input.get(0).files ? input.get(0).files.length : 1,
+      label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+  input.trigger('fileselect', [numFiles, label]);
 });

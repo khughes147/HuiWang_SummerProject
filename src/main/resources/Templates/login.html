@@ -70,10 +70,10 @@
             </div>
             <div class="modal-body">
                 <p>
-                    Please enter valid University Credentials below
+                    Please enter valid Credentials below
                 </p>
 
-                <form role="form" id="emailForm" action="#" th:action="@{/emailSubmission}" th:object="${university}" method="post">
+                <form role="form" id="emailForm" action="#" th:action="@{/emailSubmission}" th:object="${producer}" method="post">
                     <div class="form-group">
 
 
@@ -81,14 +81,12 @@
                             <label for="emailID"><span class="glyphicon glyphicon-envelope"></span> Email</label>
                             <input type="email" class="form-control" id="emailID" th:field="*{email}" placeholder="Enter email"/></p>
                         <p>
-                            <label for="uniID"><span class="glyphicon glyphicon-book"></span> University Name</label>
-                            <input type="text" class="form-control" id="uniID"  th:field="*{uniName}" placeholder="Enter University Name"/></p>
+                            <label for="uniID"><span class="glyphicon glyphicon-book"></span> Producer Name</label>
+                            <input type="text" class="form-control" id="uniID"  th:field="*{producerName}" placeholder="Enter Producer Name"/></p>
                         <p>
-                            <label for="adminID"><span class="glyphicon glyphicon-user"></span> University contact name</label>
-                            <input type="text" class="form-control" id="adminID"  th:field="*{adminName}" placeholder="Enter contact name"/></p>
-                        <p>
-                            <label for="adminContactNumber"><span class="glyphicon glyphicon-earphone"></span> Contact Number</label>
-                            <input type="number" class="form-control" id="adminContactNumber"  th:field="*{contactNumber}" placeholder="Enter contact number"/></p>
+                            <label for="adminID"><span class="glyphicon glyphicon-user"></span> Wallet Password</label>
+                            <input type="text" class="form-control" id="adminID"  th:field="*{password}" placeholder="Enter a Wallet password"/></p>
+
                     </div>
                     <button type="button" id="submitButton" class="btn btn-default btn-success btn-block" data-dismiss="modal" ><span class="glyphicon glyphicon-check"></span> Register</button>
                 </form>
@@ -109,7 +107,7 @@
             </div>
             <div class="modal-body">
                 <p id="status"></p>
-                <p th:text=" 'We need to investigate the authenticity of your University.'"/>
+                <p th:text=" 'We need to investigate the authenticity of your registration'"/>
                 <p th:text=" 'You will recieve an email regarding the success of your registration as soon as possible.'"/>
             </div>
             <div class="modal-footer">

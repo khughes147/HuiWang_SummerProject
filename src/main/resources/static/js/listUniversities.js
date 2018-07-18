@@ -1,4 +1,4 @@
-function listUniversities()
+ function listUniversities()
 {
 
 
@@ -10,7 +10,7 @@ function listUniversities()
             statusCode: {
                   200: function( data ) {
                   $("#uniListTable").show();
-                   var output="<table id='uniListTable'><thead><th class='myTableHeader'>Admin Email</th><th class='myTableHeader'>University</th><th class='myTableHeader'>Admin Name</th><th class='myTableHeader'>Contact Number</th><th>Verified Status</th><th class='myTableHeader'>Hashed Key(SHA256)</th><th class='myTableHeader'>Private Key</th></thead><tbody>";
+                   var output="<table id='uniListTable'><thead><th class='myTableHeader'>Producer Email</th><th class='myTableHeader'>Producer Name</th><th class='myTableHeader'>Producer Wallet</th><th class='myTableHeader'>Producer Address</th><th class='myTableHeader'>Verified</th></thead><tbody>";
                                     $.each(data, function(i, item){
                                        output += "<tr class='table-row'>";
                                        $.each(item, function(p, value){
@@ -42,7 +42,7 @@ function listUnverifiedUniversities()
             statusCode: {
                   200: function( data ) {
                   $("#uniListTable").show();
-                   var output="<h5 id='removeUniHeader'> Universities awaiting verification </h5> <table id='uniListTable'><thead><th class='myTableHeader'>Admin Email</th><th class='myTableHeader'>University</th><th class='myTableHeader'>Admin Name</th><th class='myTableHeader'>Contact Number</th><th>Verified Status</th><th class='myTableHeader'>Hashed Key(SHA256)</th><th class='myTableHeader'>Private Key</th></thead><tbody>";
+                   var output="<h5 id='removeUniHeader'> Universities awaiting verification </h5> <table id='uniListTable'><thead><th class='myTableHeader'>Producer Email</th><th class='myTableHeader'>Producer Name</th><th class='myTableHeader'>Producer Wallet</th><th class='myTableHeader'>Producer Address</th><th class='myTableHeader'>Verified</th></thead><tbody>";
                                     $.each(data, function(i, item){
                                        output += "<tr class='table-row'>";
                                        $.each(item, function(p, value){
@@ -91,6 +91,31 @@ $.ajax(
 
 
 }
+
+function outputProducers(){
+
+
+$.ajax(
+        {
+            type: "GET",
+            cache: false,
+            url: "/outputProducers",
+
+            success: function(data)
+            {
+                $("#uniListTable").html("<h5> Producer file generated </h5>");
+            },
+            error: function(data)
+            {
+
+            }
+
+        });
+
+
+
+}
+
 
 function verifyUni(){
 

@@ -71,10 +71,10 @@
             </div>
             <div class="modal-body">
                 <p>
-                    Please enter valid University Credentials below
+                    Please enter valid Credentials below
                 </p>
 
-                <form role="form" id="emailForm" action="#" th:action="@{/emailSubmission}" th:object="${university}" method="post">
+                <form role="form" id="emailForm" action="#" th:action="@{/emailSubmission}" th:object="${producer}" method="post">
                     <div class="form-group">
 
 
@@ -82,14 +82,12 @@
                             <label for="emailID"><span class="glyphicon glyphicon-envelope"></span> Email</label>
                             <input type="email" class="form-control" id="emailID" th:field="*{email}" placeholder="Enter email"/></p>
                         <p>
-                            <label for="uniID"><span class="glyphicon glyphicon-book"></span> University Name</label>
-                            <input type="text" class="form-control" id="uniID"  th:field="*{uniName}" placeholder="Enter University Name"/></p>
+                            <label for="uniID"><span class="glyphicon glyphicon-book"></span> Producer Name</label>
+                            <input type="text" class="form-control" id="uniID"  th:field="*{producerName}" placeholder="Enter Producer Name"/></p>
                         <p>
-                            <label for="adminID"><span class="glyphicon glyphicon-user"></span> University contact name</label>
-                            <input type="text" class="form-control" id="adminID"  th:field="*{adminName}" placeholder="Enter contact name"/></p>
-                        <p>
-                            <label for="adminContactNumber"><span class="glyphicon glyphicon-earphone"></span> Contact Number</label>
-                            <input type="number" class="form-control" id="adminContactNumber"  th:field="*{contactNumber}" placeholder="Enter contact number"/></p>
+                            <label for="adminID"><span class="glyphicon glyphicon-user"></span> Wallet Password</label>
+                            <input type="text" class="form-control" id="adminID"  th:field="*{password}" placeholder="Enter a Wallet password"/></p>
+
                     </div>
                     <button type="button" id="submitButton" class="btn btn-default btn-success btn-block" data-dismiss="modal" ><span class="glyphicon glyphicon-check"></span> Register</button>
                 </form>
@@ -99,38 +97,7 @@
 </div>
 
 
-<div class="modal fade" id="myResetModal" tabindex="-1" role="dialog" aria-labelledby="resetModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title" id="resetModalLabel">Reset Private Key</h3>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p>
-                    Please enter your email address and the last 3 digits of your contact number below.
-                </p>
-                <p class="failedSubmission" th:text="${resetErrorMessage}"></p>
-                <form role="form" id="resetForm" action="#" th:action="@{/resetKey}" th:object="${university}" method="post">
-                    <div class="form-group">
 
-
-                        <p>
-                            <label for="emailID"><span class="glyphicon glyphicon-envelope"></span> Email</label>
-                            <input type="email" class="form-control" id="emailResetID" th:field="*{email}" placeholder="Enter email"/></p>
-                        <p>
-                            <label for="uniID"><span class="glyphicon glyphicon-book"></span> Number verification</label>
-                            <input type="text" class="form-control" id="uniResetID"  th:field="*{contactNumber}" placeholder="Enter last 3 digits of contact number"/></p>
-
-                    </div>
-                    <button type="button" id="submitResetButton" class="btn btn-default btn-success btn-block" data-dismiss="modal"><span class="glyphicon glyphicon-check"></span> Reset</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- Bootstrap Modal -->
 <div class="modal fade" id="SuccessModal" role="dialog">
@@ -144,7 +111,7 @@
             </div>
             <div class="modal-body">
                 <p id="status"></p>
-                <p th:text=" 'We need to investigate the authenticity of your University.'"/>
+                <p th:text=" 'We need to investigate the authenticity of your registration'"/>
                 <p th:text=" 'You will recieve an email regarding the success of your registration as soon as possible.'"/>
             </div>
             <div class="modal-footer">
@@ -221,41 +188,48 @@
 <p class="failedSubmission" th:text="${errorMessage}"></p>
 
 <div class="container" id="publishDataContainer">
-    <form id="publishForm" action="#" th:action="@{/publishForm}" th:object="${record}" method="post">
+    <form id="publishForm" action="#" th:action="@{/publishForm}" enctype="multipart/form-data" th:object="${Fingerprint}" method="post">
         <div class="form-group">
 
 
             <p>
-                <label for="studentNameID"><span class="glyphicon glyphicon-user"></span> Student Name</label>
-                <input type="text" class="form-control" id="studentNameID" th:field="*{studentName}" placeholder="Enter student name"/></p>
+                <label for="fingerPrintID"><span class="glyphicon glyphicon-user"></span> Fingerprint</label>
+                <input type="text" class="form-control" id="fingerPrintID" th:field="*{fingerprint}" placeholder="Enter fingerprint"/></p>
             <p>
-                <label for="studentID"><span class="glyphicon glyphicon-tag"></span> Student ID</label>
-                <input type="text" class="form-control" id="studentID"  th:field="*{studentID}" placeholder="Enter student ID"/></p>
-            <p>
-                <label for="studentEmail"><span class="glyphicon glyphicon-envelope"></span> Student Email</label>
-                <input type="email" class="form-control" id="studentEmail"  th:field="*{studentEmail}" placeholder="Enter student's email"/></p>
-            <p>
-                <label for="courseNameID"><span class="glyphicon glyphicon-book"></span> Course name</label>
-                <input type="text" class="form-control" id="courseNameID" th:field="*{courseName}" placeholder="Enter course name"/></p>
-            <p>
-                <label for="startDateID"><span class="glyphicon glyphicon-calendar"></span> Start date</label>
-                <input type="text" class="form-control" id="startDateID"  th:field="*{startDate}" placeholder="Select a date"/></p>
+                <label for="producerID"><span class="glyphicon glyphicon-tag"></span> Producer Name</label>
+                <input type="text" class="form-control" id="producerID"  th:field="*{producerName}" placeholder="Enter name of producer"/></p>
+
+                <label for="walletID"><span class="glyphicon glyphicon-envelope"></span> Wallet</label>
+                <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="btn btn-primary btn-file">
+                        Browse <input type="file" id="walletButton" />
+                    </span>
+                </span>
+                <input type="text" id="walletID" th:field="*{wallet}" class="form-control" />
+                </div>
+            <p> </p>
+
+            <label for="videoID"><span class="glyphicon glyphicon-envelope"></span> Video file</label>
+            <div class="input-group">
+                <span class="input-group-btn">
+                    <span class="btn btn-primary btn-file">
+                        Browse <input type="file" id="videoButton" th:field="*{videoFile}"/>
+                    </span>
+                </span>
+                <input type="text" id="videoID"  class="form-control" />
+            </div>
+            <p> </p>
 
             <p>
-                <label for="endDateID"><span class="glyphicon glyphicon-calendar"></span> Date awarded</label>
-                <input type="text" class="form-control" id="endDateID"  th:field="*{endDate}" placeholder="Select a date"/></p>
-            <p>
-                <label for="classificationID"><span class="glyphicon glyphicon-ok-circle"></span> Classification</label>
-                <input type="text" class="form-control" id="classificationID"  th:field="*{classification}" placeholder="Enter classification awarded"/></p>
-            <p>
-                <label for="uniKeyID"><span class="glyphicon glyphicon-cog"></span> University Key</label>
-                <input type="text" class="form-control" id="uniKeyID"  th:field="*{universityKey}" placeholder="Enter University key"/></p>
+                <label for="walletPasswordID"><span class="glyphicon glyphicon-book"></span> Wallet Password</label>
+                <input type="text" class="form-control" id="walletPasswordID" th:field="*{password}" placeholder="Enter your wallet password" /></p>
+
+
+
         </div>
         <button type="submit" value="Submit" id="publishButton" class="btn btn-default btn-success btn-block" ><span class="glyphicon glyphicon-check"></span> Publish</button>
     </form>
-</div>
-<div class="container" id="resetButtonContainer">
-<a  class="resetButton" href="#" data-toggle="modal" data-target="#myResetModal">Forgot/Lost private key?</a>
 </div>
 
 

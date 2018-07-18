@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
@@ -69,10 +69,10 @@
             </div>
             <div class="modal-body">
                 <p>
-                    Please enter valid University Credentials below
+                    Please enter valid Credentials below
                 </p>
 
-                <form role="form" id="emailForm" action="#" th:action="@{/emailSubmission}" th:object="${university}" method="post">
+                <form role="form" id="emailForm" action="#" th:action="@{/emailSubmission}" th:object="${producer}" method="post">
                     <div class="form-group">
 
 
@@ -80,14 +80,11 @@
                             <label for="emailID"><span class="glyphicon glyphicon-envelope"></span> Email</label>
                             <input type="email" class="form-control" id="emailID" th:field="*{email}" placeholder="Enter email"/></p>
                         <p>
-                            <label for="uniID"><span class="glyphicon glyphicon-book"></span> University Name</label>
-                            <input type="text" class="form-control" id="uniID"  th:field="*{uniName}" placeholder="Enter University Name"/></p>
+                            <label for="uniID"><span class="glyphicon glyphicon-book"></span> Producer Name</label>
+                            <input type="text" class="form-control" id="uniID"  th:field="*{producerName}" placeholder="Enter Producer Name"/></p>
                         <p>
-                            <label for="adminID"><span class="glyphicon glyphicon-user"></span> University contact name</label>
-                            <input type="text" class="form-control" id="adminID"  th:field="*{adminName}" placeholder="Enter contact name"/></p>
-                        <p>
-                            <label for="adminContactNumber"><span class="glyphicon glyphicon-earphone"></span> Contact Number</label>
-                            <input type="number" class="form-control" id="adminContactNumber"  th:field="*{contactNumber}" placeholder="Enter contact number"/></p>
+                            <label for="adminID"><span class="glyphicon glyphicon-user"></span> Wallet Password</label>
+                            <input type="text" class="form-control" id="adminID"  th:field="*{password}" placeholder="Enter a Wallet password"/></p>
                     </div>
                     <button type="button" id="submitButton" class="btn btn-default btn-success btn-block" data-dismiss="modal" ><span class="glyphicon glyphicon-check"></span> Register</button>
                 </form>
@@ -108,7 +105,7 @@
             </div>
             <div class="modal-body">
                 <p id="status"></p>
-                <p th:text=" 'We need to investigate the authenticity of your University.'"/>
+                <p th:text=" 'We need to investigate the authenticity of your registration'"/>
                 <p th:text=" 'You will recieve an email regarding the success of your registration as soon as possible.'"/>
             </div>
             <div class="modal-footer">
@@ -138,14 +135,14 @@
     </div>
 </div>
 
-<h3 id="publishHeader">Verifying an applicant's qualification</h3>
-<p id="publishMessage">Enter an applicant's unique key below and we'll check for an Ethereum Smart Contract</p>
+<h3 id="publishHeader">Verifying a fingerprint</h3>
+<p id="publishMessage">Enter a unique fingerprint below and we'll query the blockchain</p>
 <div  class="container" id="verifyFormContainer">
 
     <form role="form" id="verifyForm" action="#" th:action="@{/verifySubmission}" method="post">
         <div class="form-group">
             <p>
-                <label for="applicantKey"><span class="glyphicon glyphicon-user"></span> Applicant key</label>
+                <label for="applicantKey"><span class="glyphicon glyphicon-user"></span> Fingerprint</label>
                 <input type="text" class="form-control" id="applicantKey" name="applicantKey" placeholder="Enter applicant's key"/></p>
         </div>
         <button type="submit" value="Submit" id="verifyButton" class="btn btn-default btn-success btn-block"><span class="glyphicon glyphicon-check"></span> Verify</button>
@@ -155,26 +152,14 @@
 <div  class="container" id="retrievedDataContainer">
 
     <div class="clearfix">
-        <h3>Student name: </h3><h3 id="recordTextA" th:text="${studentName}"></h3>
+        <h3>Result: </h3><h3 id="recordTextA" th:text="${result}"></h3>
+        <p>
+        <h3>Fingerprint: </h3><h3 id="recordTextB" th:text="${fingerprint}"></h3>
+        <h3>Producer: </h3><h3 id="recordTextC" th:text="${Producer}"></h3>
+        <h3>Video: </h3><h3 id="recordTextD" th:text="${video}"></h3>
+        </p>
     </div>
-    <div class="clearfix">
-        <h3>Student ID: </h3><h3 id="recordTextB" th:text="${studentID}"></h3>
-    </div>
-    <div class="clearfix">
-        <h3>Student email: </h3><h3 id="recordTextC" th:text="${studentEmail}"></h3>
-    </div>
-    <div class="clearfix">
-        <h3>Course name: </h3><h3 id="recordTextD" th:text="${courseName}"></h3>
-    </div>
-    <div class="clearfix">
-        <h3>Start date: </h3><h3 id="recordTextE" th:text="${startDate}"></h3>
-    </div>
-    <div class="clearfix">
-        <h3>End date: </h3><h3  id="recordTextF" th:text="${endDate}"></h3>
-    </div>
-    <div class="clearfix">
-        <h3>Classification: </h3><h3 id="recordTextG" th:text="${classification}"></h3>
-    </div>
+
 
 
 </div>

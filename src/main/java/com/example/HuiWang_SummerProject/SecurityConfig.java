@@ -1,4 +1,4 @@
-package com.example.QualificationAuthenticator;
+package com.example.HuiWang_SummerProject;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -15,7 +15,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/home", "/aboutUs", "/verification", "/emailSubmission", "/css/**","/images/**","/js/**", "/fonts/**", "/publish", "/publishForm", "/verifySubmission").permitAll()
+                .antMatchers("/", "/home", "/aboutUs", "/verification", "/emailSubmission", "/css/**","/images/**","/js/**", "/fonts/**", "/publish", "/temp/**", "/publishForm", "/verifySubmission").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
