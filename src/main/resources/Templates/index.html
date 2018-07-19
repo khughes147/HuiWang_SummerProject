@@ -37,18 +37,18 @@
     <div class="wrapper">
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-fixed-top">
             <!-- logo -->
-            <a class="navbar-brand" href="/">Authenti-Q</a>
+            <a class="navbar-brand" href="/">iProduce</a>
 
             <!-- Links -->
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
+                <li class="nav-item; active">
                     <a class="nav-link" href="aboutUs">About</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="verification">Verify</a>
+                    <a class="nav-link" href="verification">Consumer</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="publish">Publish</a>
+                    <a class="nav-link" href="publish">Producer</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="" data-toggle="modal" data-target="#myModal">Register</a>
@@ -56,7 +56,7 @@
             </ul>
             <ul class="nav navbar-nav">
                 <li class="nav-item">
-                    <a class="glyphicon glyphicon-cog" id="adminNavItem" href="administration"></a>
+                    <a class="nav-link" id="adminNavItem" href="administration">Admin</a>
                 </li>
             </ul>
         </nav>
@@ -65,10 +65,10 @@
                 <div class="col-md-12 text-center">
                     <div class="text-homeimage">
                         <div class="maintext-image" data-scrollreveal="enter top over 1.5s after 0.1s">
-                            Discover the power of Blockchain
+                            Want to be sure you're buying organic?
                         </div>
                         <div class="subtext-image" data-scrollreveal="enter bottom over 1.7s after 0.3s">
-                            Qualification Authentication made easy
+                            Authenticate your product using our secure system.
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                     <span class="numberstep"><i class="fa fa-link"></i></span>
                     <h3 class="numbertext">Remove chance of fraud</h3>
                     <p>
-                        Online verification removes the chance of an applicant sending a forged certificate.
+                        Retailers will no longer be able to falsely advertise processed products as organic
                     </p>
                 </div>
                 <!-- /.col-md-4 -->
@@ -96,9 +96,9 @@
             <div class="col-md-4 editContent">
                 <div class="col">
                     <span class="numberstep"><i class="fa fa-users"></i></span>
-                    <h3 class="numbertext">Remove third-parties</h3>
+                    <h3 class="numbertext">Check prodcuts at any time and from anywhere</h3>
                     <p>
-                        Blockchain's decentralised nature means applicant's data can't be tampered with. It also removes the need for University admins.
+                        Our secure collection of verified produce can be accessed on the go using your smartphone
                     </p>
                 </div>
                 <!-- /.col -->
@@ -107,9 +107,9 @@
             <div class="col-md-4 editContent">
                 <div class="col">
                     <span class="numberstep"><i class="fa fa-check"></i></span>
-                    <h3 class="numbertext">Instant verification</h3>
+                    <h3 class="numbertext">Latest technology</h3>
                     <p>
-                        Authenti-Q verification takes a couple of minutes. No need to wait for receipt of paper certificates or confirmation emails from Universities.
+                        Our system utilises an Imaging spectrometer and advance machine learning alogrithms to accurately classsify products. Data we store is kept secure in a blockchain network.
                     </p>
                 </div>
             </div>
@@ -202,7 +202,7 @@
             </div>
             <div class="modal-body">
                 <p id="errorstatus"></p>
-                <p th:text=" 'This University has already been registered'"/>
+                <p th:text=" 'Unable to submit registration'"/>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -224,15 +224,12 @@
                 </p>
                 <ul class = "col-md-5 list-inline">
                     <li class="list-inline-item"><a href="/home"><u>Home</u></a> </li>
-                    <li class="list-inline-item"><a href="/aboutUs"><u>About</u></a></li>
-                    <li class="list-inline-item"><a href="/verification"><u>Verify</u></a></li>
-                    <li class="list-inline-item"><a href="/publish"><u>Publish</u></a></li>
+                    <li class="list-inline-item; active"><a href="/aboutUs"><u>About</u></a></li>
+                    <li class="list-inline-item"><a href="/verification"><u>Consumer</u></a></li>
+                    <li class="list-inline-item"><a href="/publish"><u>Producer</u></a></li>
                     <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#myModal"><u>Register</u></a></li>
 
                 </ul>
-                <p class="col-md-3">
-                    B00658563
-                </p>
             </div>
         </div>
     </div>

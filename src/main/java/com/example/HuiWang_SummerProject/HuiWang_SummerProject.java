@@ -34,7 +34,7 @@ public class HuiWang_SummerProject {
 
     static {
         try {
-            credentials = WalletUtils.loadCredentials("Ethereum", "C:\\Users\\Kieran\\Documents\\EthereumProjectChain\\data\\keystore\\UTC--2018-06-20T16-20-55.193747000Z--83e08a5e77901126a16721590a8e1379fb7b1b6b");
+            credentials = WalletUtils.loadCredentials("Ethereum", "C:\\Users\\khugh\\Documents\\EthereumProjectChain\\data\\keystore\\UTC--2018-06-20T16-20-55.193747000Z--83e08a5e77901126a16721590a8e1379fb7b1b6b");
         } catch (IOException e) {
             e.printStackTrace();
         } catch (CipherException e) {

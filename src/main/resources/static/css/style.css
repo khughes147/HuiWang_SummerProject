@@ -139,7 +139,7 @@ width: 60%;
 #recordTextA{
 
 text-align:center !important;
-padding-left: 90px;
+padding-left: 177px;
 
 }
 
@@ -153,15 +153,20 @@ padding-left: 126px;
 #recordTextC{
 
 text-align:center !important;
-padding-left: 90px;
+padding-left: 147px;
 
 }
 
 #recordTextD{
 
 text-align:center !important;
-padding-left: 95px;
+padding-left: 183px;
 
+}
+
+#spacer{
+
+padding-bottom:150px;
 }
 
 #recordTextE{
@@ -246,6 +251,14 @@ padding-right:2px;
 #addUniversityButton{
 
 background-color:#e58327;
+}
+
+#outputProducers{
+background-color:#3a6cd1;
+}
+
+#outputAllData{
+background-color:#3a6cd1;
 }
 
 #confirmUniversityButton{

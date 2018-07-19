@@ -24,15 +24,7 @@ $(document).ready(function(){
 		$('#producerID').after('<p class="studentIdErrorMessage">Student ID can\'t be empty.</p>');}
 	});
 
-	$('#walletID').blur(function(event) {
-    		var input=$(this);
-    		var message=$(this).val();
-    		if(message){input.removeClass("is-invalid").addClass("is-valid"),
-    		$('p.studentIdErrorMessage').remove();}
-    		else{input.removeClass("is-valid").addClass("is-invalid"),
-    		$('p.studentIdErrorMessage').remove(),
-    		$('#walletID').after('<p class="studentIdErrorMessage">Student ID can\'t be empty.</p>');}
-    	});
+
 
     	$('#walletPasswordID').blur(function(event) {
         		var input=$(this);
@@ -51,7 +43,6 @@ $("#publishButton").click(function(event){
 
     if ($('#fingerPrintID').hasClass('form-control is-valid')){
         if ($('#producerID').hasClass('form-control is-valid')){
-            if ($('#walletID').hasClass('form-control is-valid')){
                 if ($('#walletPasswordID').hasClass('form-control is-valid')){
 
                 }else{
@@ -62,10 +53,6 @@ $("#publishButton").click(function(event){
             alert("Please ensure all fields are completed correctly."),
             event.stopPropagation();
             event.preventDefault();}
-        }else{
-        alert("Please ensure all fields are completed correctly."),
-        event.stopPropagation();
-        event.preventDefault();}
     }else{
     alert("Please ensure all fields are completed correctly."),
     event.stopPropagation();

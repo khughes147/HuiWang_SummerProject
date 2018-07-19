@@ -116,6 +116,30 @@ $.ajax(
 
 }
 
+function outputFingerprintData(){
+
+
+$.ajax(
+        {
+            type: "GET",
+            cache: false,
+            url: "/outputFingerprintData",
+
+            success: function(data)
+            {
+                $("#uniListTable").html("<h5> Fingerprint data file generated </h5>");
+            },
+            error: function(data)
+            {
+
+            }
+
+        });
+
+
+
+}
+
 
 function verifyUni(){
 
@@ -172,3 +196,26 @@ $.ajax(
 }
 
 
+function downloadVideo(){
+
+
+$.ajax(
+        {
+            type: "GET",
+            cache: false,
+            url: "/downloadFile",
+
+            success: function(data)
+            {
+
+            },
+            error: function(data)
+            {
+
+            }
+
+        });
+
+
+
+}

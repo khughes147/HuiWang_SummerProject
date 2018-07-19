@@ -55,8 +55,8 @@ public class RegistrationController {
             }
 
         }
-        producer.setWalletFile(WalletUtils.generateFullNewWalletFile(producer.getPassword(), new File("C:\\Users\\Kieran\\IdeaProjects\\HuiWang_SummerProject\\src\\main\\resources\\temp")));
-        Credentials cred = WalletUtils.loadCredentials(producer.getPassword(),"C:\\Users\\Kieran\\IdeaProjects\\HuiWang_SummerProject\\src\\main\\resources\\temp\\" + producer.getWalletFile());
+        producer.setWalletFile(WalletUtils.generateFullNewWalletFile(producer.getPassword(), new File("C:\\Users\\khugh\\IdeaProjects\\HuiWang_SummerProject\\src\\main\\resources\\temp")));
+        Credentials cred = WalletUtils.loadCredentials(producer.getPassword(),"C:\\Users\\khugh\\IdeaProjects\\HuiWang_SummerProject\\src\\main\\resources\\temp\\" + producer.getWalletFile());
         producer.setProducerAddress(cred.getAddress());
         producer.setPassword("");
         unverifiedProducerArrayList.add(producer);
@@ -143,7 +143,7 @@ public class RegistrationController {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-                regServ.sendSimpleMessage(unverifiedProducerArrayList.get(i).getEmail(), "Registration Success!!", "Hi " + unverifiedProducerArrayList.get(i).getProducerName() + ",\n\nThis email is to confirm that you have successfully been added to the service.\n Your wallet has been attached. Please keep this secure as you will need it to upload records. \n\nMany thanks", "C:\\Users\\Kieran\\IdeaProjects\\HuiWang_SummerProject\\src\\main\\resources\\temp\\" + unverifiedProducerArrayList.get(i).getWalletFile());
+                regServ.sendSimpleMessage(unverifiedProducerArrayList.get(i).getEmail(), "Registration Success!!", "Hi " + unverifiedProducerArrayList.get(i).getProducerName() + ",\n\nThis email is to confirm that you have successfully been added to the service.\n Your wallet has been attached. Please keep this secure as you will need it to upload records. \n\nMany thanks", "C:\\Users\\khugh\\IdeaProjects\\HuiWang_SummerProject\\src\\main\\resources\\temp\\" + unverifiedProducerArrayList.get(i).getWalletFile());
 
                 producerArrayList.add(unverifiedProducerArrayList.get(i));
 
@@ -162,7 +162,7 @@ public class RegistrationController {
 
             if(unverifiedProducerArrayList.get(i).getEmail().equals(email)){
 
-                Files.deleteIfExists(Paths.get("C:\\Users\\Kieran\\IdeaProjects\\HuiWang_SummerProject\\src\\main\\resources\\temp\\" + unverifiedProducerArrayList.get(i).getWalletFile()));
+                Files.deleteIfExists(Paths.get("C:\\Users\\khugh\\IdeaProjects\\HuiWang_SummerProject\\src\\main\\resources\\temp\\" + unverifiedProducerArrayList.get(i).getWalletFile()));
                 unverifiedProducerArrayList.remove(i);
             }
 

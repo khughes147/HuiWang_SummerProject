@@ -35,7 +35,7 @@
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark navbar-fixed-top">
         <!-- logo -->
-        <a class="navbar-brand" href="/">Authenti-Q</a>
+        <a class="navbar-brand" href="/">iProduce</a>
 
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
@@ -43,10 +43,10 @@
                 <a class="nav-link" href="aboutUs">About</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="verification">Verify</a>
+                <a class="nav-link" href="verification">Consumer</a>
             </li>
             <li class="nav-item; active">
-                <a class="nav-link" href="publish">Publish</a>
+                <a class="nav-link" href="publish">Producer</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="" data-toggle="modal" data-target="#myModal">Register</a>
@@ -54,7 +54,7 @@
         </ul>
         <ul class="nav navbar-nav">
             <li class="nav-item">
-                <a class="glyphicon glyphicon-cog" id="adminNavItem" href="administration"></a>
+                <a class="nav-link" id="adminNavItem" href="administration">Admin</a>
             </li>
         </ul>
     </nav>
@@ -86,7 +86,7 @@
                             <input type="text" class="form-control" id="uniID"  th:field="*{producerName}" placeholder="Enter Producer Name"/></p>
                         <p>
                             <label for="adminID"><span class="glyphicon glyphicon-user"></span> Wallet Password</label>
-                            <input type="text" class="form-control" id="adminID"  th:field="*{password}" placeholder="Enter a Wallet password"/></p>
+                            <input type="password" class="form-control" id="adminID"  th:field="*{password}" placeholder="Enter a Wallet password"/></p>
 
                     </div>
                     <button type="button" id="submitButton" class="btn btn-default btn-success btn-block" data-dismiss="modal" ><span class="glyphicon glyphicon-check"></span> Register</button>
@@ -173,7 +173,7 @@
             </div>
             <div class="modal-body">
                 <p id="errorstatus"></p>
-                <p th:text=" 'This University has already been registered'"/>
+                <p th:text=" 'Unable to submit registration'"/>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -182,8 +182,8 @@
     </div>
 </div>
 
-<h3 id="publishHeader">Uploading a student record</h3>
-<p id="publishMessage">Complete the form below with the graduating student's details. Only Universities with a valid key can upload a record.</p>
+<h3 id="publishHeader">Uploading a fingerprint</h3>
+<p id="publishMessage">Complete the form below with the prodcuts details. Only Prodcuers with a valid wallet can upload a record.</p>
 <h4 class="successfulSubmission" th:text="${successMessage}"></h4>
 <p class="failedSubmission" th:text="${errorMessage}"></p>
 
@@ -223,7 +223,7 @@
 
             <p>
                 <label for="walletPasswordID"><span class="glyphicon glyphicon-book"></span> Wallet Password</label>
-                <input type="text" class="form-control" id="walletPasswordID" th:field="*{password}" placeholder="Enter your wallet password" /></p>
+                <input type="password" class="form-control" id="walletPasswordID" th:field="*{password}" placeholder="Enter your wallet password" /></p>
 
 
 
@@ -231,7 +231,8 @@
         <button type="submit" value="Submit" id="publishButton" class="btn btn-default btn-success btn-block" ><span class="glyphicon glyphicon-check"></span> Publish</button>
     </form>
 </div>
-
+<div  class="container" id="spacer">
+</div>
 
 
 <!-- FOOTER =============================-->
@@ -244,14 +245,12 @@
             <ul class = "col-md-5 list-inline">
                 <li class="list-inline-item"><a href="/home"><u>Home</u></a> </li>
                 <li class="list-inline-item; active"><a href="/aboutUs"><u>About</u></a></li>
-                <li class="list-inline-item"><a href="/verification"><u>Verify</u></a></li>
-                <li class="list-inline-item"><a href="/publish"><u>Publish</u></a></li>
+                <li class="list-inline-item"><a href="/verification"><u>Consumer</u></a></li>
+                <li class="list-inline-item"><a href="/publish"><u>Producer</u></a></li>
                 <li class="list-inline-item"><a href="#" data-toggle="modal" data-target="#myModal"><u>Register</u></a></li>
 
             </ul>
-            <p class="col-md-3">
-                B00658563
-            </p>
+
         </div>
     </div>
 </div>
